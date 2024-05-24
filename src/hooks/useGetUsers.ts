@@ -18,7 +18,7 @@ export function useGetUsers(): {
 
   console.log(page);
   const { data: users, status } = useQuery({
-    queryKey: ["users"],
+    queryKey: ["users", page],
     queryFn: () => getUsers({ page }),
   });
   return { users, status };

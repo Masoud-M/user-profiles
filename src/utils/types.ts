@@ -1,3 +1,11 @@
+export type userProps = {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  avatar: string;
+};
+
 export type usersData = {
   page: number;
   per_page: number;
@@ -7,15 +15,7 @@ export type usersData = {
     url: string;
     text: string;
   };
-  data: [
-    {
-      id: number;
-      email: string;
-      first_name: string;
-      last_name: string;
-      avatar: string;
-    }
-  ];
+  data: [userProps];
 };
 
 export type status = "error" | "success" | "pending";
