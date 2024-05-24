@@ -5,7 +5,7 @@ import { status, userData } from "../utils/types";
 
 export function useGetUser(): { user: userData; status: status } {
   // Get the userId from the url
-  const { userId } = useParams();
+  const { userId = "1" } = useParams();
 
   const { data: user, status } = useQuery({
     queryKey: ["user", userId],
