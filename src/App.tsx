@@ -1,8 +1,7 @@
-import { useGetUsers } from "./hooks/useGetUsers";
+import { useGlobalContext } from "./context/GlobalContext";
 
 function App() {
-  const { status, users } = useGetUsers();
-  console.log(status);
+  const { users } = useGlobalContext();
   console.log(users);
   return <div>app</div>;
 }

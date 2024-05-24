@@ -19,3 +19,9 @@ export type usersData = {
 };
 
 export type status = "error" | "success" | "pending";
+
+export type globalContextValues = {
+  users: usersData;
+  status: status;
+  currentPage: string;
+};
