@@ -13,7 +13,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-
           <Route path="/users/:userId" element={<UserPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>

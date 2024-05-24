@@ -9,7 +9,7 @@ export function useGetUsers(): {
 } {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // PAGINATION
+  // If there is no value for page in the url then set the default value to 1
   if (!searchParams.get("page")) {
     searchParams.set("page", "1");
     setSearchParams(searchParams);

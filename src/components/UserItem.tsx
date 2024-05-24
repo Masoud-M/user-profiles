@@ -3,11 +3,17 @@ import { userProps } from "../utils/types";
 
 function UserItem({ user }: { user: userProps }) {
   const navigate = useNavigate();
+
+  // Navigates to the user page with the given userId
+  function handleNavigation() {
+    navigate(`/users/${JSON.stringify(user.id)}`);
+  }
+
   return (
     <div
       id={JSON.stringify(user.id)}
       className="flex flex-col justify-start gap-4 text-xl font-semibold transition-all cursor-pointer sm:flex-row hover:text-blue-400 md:justify-between"
-      onClick={() => navigate(`/users/${JSON.stringify(user.id)}`)}
+      onClick={() => handleNavigation()}
     >
       <div className="flex flex-row items-center gap-2">
         <div className="mr-4 w-14 h-14 md:w-20 md:h-20">

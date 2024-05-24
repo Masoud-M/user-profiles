@@ -5,7 +5,11 @@ import Error from "./Error";
 
 function UserPage() {
   const { status, user } = useGetUser();
+
+  // Handling loading state
   if (status === "pending") return <Spinner />;
+
+  // Handling error state
   if (status === "error") return <Error />;
 
   return (
