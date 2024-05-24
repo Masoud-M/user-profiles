@@ -18,6 +18,13 @@ export type usersData = {
   data: [userProps];
 };
 
+export type userData = {
+  data: userProps;
+  support: {
+    url: string;
+    text: string;
+  };
+};
 export type status = "error" | "success" | "pending";
 
 export type globalContextValues = {
