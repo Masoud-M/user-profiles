@@ -1,9 +1,24 @@
-import { useGlobalContext } from "./context/GlobalContext";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import PageNotFound from "./pages/PageNotFound";
+import LandingPage from "./pages/LandingPage";
 
 function App() {
-  const { users } = useGlobalContext();
-  console.log(users);
-  return <div>app</div>;
+  const queryClient = new QueryClient();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+
+          {/* <Route path="users/:userId" element={} /> */}
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
+  );
 }
 
 export default App;
